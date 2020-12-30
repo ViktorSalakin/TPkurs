@@ -104,9 +104,20 @@ void country::createCountry(string filename)
 	initSportsman();
 }
 //инициализирует показатели спортсмена
+
+void setCountry(string in)
+{
+	country = in;
+}
 void country::initSportsman()
 {
 	fs.open(filestring, ios_base::in);
+	if (!fs.is_open())
+	{
+		cerr << "Файл с параметрами спортсмена не был открыт..." << endl;
+		cerr << "Страна с которой возникла проблема: " << filestring << endl;
+	}
+	s->setCountry(filestring);
 	s->setSportsman(fs);
 	fs.close();
 }
