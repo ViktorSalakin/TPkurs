@@ -31,7 +31,7 @@ class sportsman
 	string family;				//фамилия
 	string name;				//имя
 	string secfamily;			//отчество
-	//string country;				//страна
+	string country;				//страна
 	//эти параметры варьируются от 0 до 100
 	float power = 0;				//сила
 	float dexterity = 0;			//ловкость
@@ -41,6 +41,8 @@ public:
 	// метод инициализации свойств спортсмена
 	istream& setSportsman(istream& in);
 	float getMid();
+	void setCountry(string in);
+
 };
 //Из внешнего файла загружаются данные по каждому спортсмену: ФИО, страна, сила, ловкость, удача, выносливость.
 class country
